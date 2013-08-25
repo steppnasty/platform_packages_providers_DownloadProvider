@@ -994,6 +994,12 @@ public class DownloadThread extends Thread {
 
             mPolicyDirty = true;
         }
+
+        @Override
+        public void onRestrictBackgroundChanged(boolean restrictBackground) {
+            // caller is NPMS, since we only register with them
+            mPolicyDirty = true;
+        }
     };
 
 }
